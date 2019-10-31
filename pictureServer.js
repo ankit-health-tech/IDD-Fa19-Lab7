@@ -123,32 +123,43 @@ io.on('connect', function(socket) {
     NodeWebcam.capture('public/'+imageName, opts, function( err, data ) {
     io.emit('newPicture',(imageName+'.jpg')); ///Lastly, the new name is send to the client web browser.
     /// The browser will take this new name and load the picture from the public folder.
-	nodemailer.createTestAccount((err, account) => {
-		let transporter = nodemailer.createTransport({
-			host: 'smtp.googlemail.com',
-			port: 465,
-			secure: true,
-			auth: {
-				user: 'ankit.devices123',
-				pass: 'ForIDD$1'
-			}
-		});
-		let  mailOptions = {
-			from: '"Ankit Doorbell" <ankit.devices123@gmail.com>',
-			to: 'ankitmalhan.iitd@gmail.com',
-			subject: 'Bro someone is at the door might wanna check that!',
-			text: 'Hey hey bro, someone is at the door might wanna check on that in case you didnt notice',
-			attachments: [{
-				filename: 'image.png',
-				path: 'public/'+imageName+'.jpg'
-				}]
-			};
-  	});
+			        });
 
-  });
-  // if you get the 'disconnect' message, say the user disconnected
-  socket.on('disconnect', function() {
-    console.log('user disconnected');
-  });
+			nodemailer.createTestAccount((err, account) => {
+				let transporter = nodemailer.createTransport({
+					host: 'smtp.googlemail.com',
+					port: 465,
+					secure: true,
+					auth: {
+						user: 'ankit.devices123', //Gmail username
+						pass: 'ForIDD$1' // Gmail password
+					}
+				});
+
+				let mailOptions = {
+					from: '"Ankit Doorbell" <ankit.devices123@gmail.com>',
+					to: 'ankitmalhan.iitd@gmail.com', 
+					subject: 'Bro someone is at the door might wanna check that!',
+					text: 'Hey hey bro, someone is at the door might wanna check on that in case you didnt notice',
+					attachments: [{
+						filename: 'image.png',
+						path: 'public/'+imageName + '.jpg',
+					}]
+				};
+
+				transporter.sendMail(mailOptions, (error, info) => {
+					if (error) {
+						return console.log(error);
+					}
+					console.log('Message sent: %s', info.messageId);
+				});
+			});
+		});
+
+	});
+	// if you get the 'disconnect' message, say the user disconnected
+	socket.on('disconnect', function() {
+		console.log('user disconnected');
+	});
 });
 //----------------------------------------------------------------------------//
