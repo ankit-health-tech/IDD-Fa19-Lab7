@@ -44,5 +44,5 @@ I had considerable difficulties in working with the camera given that in regular
 
 **b. Upload a video of your working modified project**
 
-Video of the setup is enclosed here(https://youtu.be/mlPCjHioqRc)
+Video of the setup is enclosed here(https://youtu.be/mlPCjHioqRc)<br>
 Code base used is enclosed here(https://github.com/ankit-health-tech/IDD-Fa19-Lab7/blob/master/pictureServer.js)
