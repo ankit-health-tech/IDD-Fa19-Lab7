@@ -37,7 +37,12 @@ Link to the working doorbell(https://youtu.be/jLDjTjOOZrA)
 
 **a. Find, install, and try out a node-based library and try to incorporate into your lab. Document your successes and failures (totally okay!) for your writeup. This will help others in class figure out cool new tools and capabilities.**
 
+I tried out the nodemailer functionality. It would allow me to be intimated quickly over email if anybody is at the door and a picture is taken. Furthermore, for doormen to buildings it can be a good safety feature to keep track of their surveillance work. 
+
+I had considerable difficulties in working with the camera given that in regular light it is quite blurry and exposed. However, using an umbrella indoors to cover the camera and object did help. Furthermore, given my limited understanding of javascript, debugging took considerable time than the hardware component.
+
+
 **b. Upload a video of your working modified project**
 
 Video of the setup is enclosed here(https://youtu.be/mlPCjHioqRc)
-Code base used is enclosed here()
+Code base used is enclosed here(https://github.com/ankit-health-tech/IDD-Fa19-Lab7/blob/master/pictureServer.js)
