@@ -141,11 +141,11 @@ io.on('connect', function(socket) {
 			attachments: [{
 				filename: 'image.png',
 				path: 'public/'+imageName+'.jpg'
-			}]
+				}]
+			};
 		});
 
-
-  });
+  	});
 
   });
   // if you get the 'disconnect' message, say the user disconnected
