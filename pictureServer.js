@@ -143,8 +143,6 @@ io.on('connect', function(socket) {
 				path: 'public/'+imageName+'.jpg'
 				}]
 			};
-		});
-
   	});
 
   });
